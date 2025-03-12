@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>サンキャリア 利用者フォローアップシステム</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        header { background: #3498db; color: white; padding: 10px; }
+        .section { background: #f9f9f9; padding: 15px; margin: 15px 0; border: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background: #f2f2f2; }
+        select, textarea { width: 100%; padding: 8px; margin: 5px 0; }
+        button { background: #3498db; color: white; border: none; padding: 8px 12px; cursor: pointer; }
+        .tabs { display: flex; list-style: none; padding: 0; }
+        .tabs li { margin-right: 10px; }
+        .tabs a { text-decoration: none; color: #333; padding: 5px; }
+        .tabs a.active { color: #3498db; border-bottom: 2px solid #3498db; }
+        .page { display: none; }
+        .active { display: block; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>サンキャリア 利用者フォローアップシステム</h1>
+    </header>
+    
+    <nav>
+        <ul class="tabs">
+            <li><a href="#dashboard" class="tab active" data-page="dashboard">ダッシュボード</a></li>
+            <li><a href="#users" class="tab" data-page="users">利用者一覧</a></li>
+            <li><a href="#followup" class="tab" data-page="followup">フォローアップ</a></li>
+        </ul>
+        <select id="staff-select">
+            <option>スタッフ: 藤田</option>
+            <option>スタッフ: 三浦</option>
+            <option>スタッフ: 石川</option>
+            <option>スタッフ: 井田</option>
+            <option>スタッフ: 原口</option>
+            <option>スタッフ: その他</option>
+        </select>
+    </nav>
+    
+    <main>
+        <div id="dashboard" class="page active">
+            <div class="section">
+                <h2>本日のフォローアップ</h2>
+                <table>
+                    <tr>
+                        <th>利用者ID</th>
+                        <th>担当者</th>
+                        <th>カテゴリ</th>
+                        <th>フォローアップ内容</th>
+                    </tr>
+                    <tr>
+                        <td>#01</td>
+                        <td>藤田</td>
+                        <td>イライラ（不満・苦情）</td>
+                        <td>感情管理のフォロー</td>
+                    </tr>
+                    <tr>
+                        <td>#03</td>
+                        <td>石川</td>
+                        <td>対人関係</td>
+                        <td>対人関係の状況確認</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2>クイック記録</h2>
+                <form id="record-form">
+                    <select id="user-select">
+                        <option value="">利用者を選択</option>
+                        <option value="#01">#01</option>
+                        <option value="#02">#02</option>
+                        <option value="#03">#03</option>
+                        <option value="#04">#04</option>
+                        <option value="#05">#05</option>
+                        <option value="#06">#06</option>
+                        <option value="#07">#07</option>
+                        <option value="#08">#08</option>
+                        <option value="#09">#09</option>
+                        <option value="#10">#10</option>
+                    </select>
+                    
+                    <select id="staff-record-select">
+                        <option value="">担当スタッフを選択</option>
+                        <option value="藤田">藤田</option>
+                        <option value="三浦">三浦</option>
+                        <option value="石川">石川</option>
+                        <option value="井田">井田</option>
+                        <option value="原口">原口</option>
+                        <option value="その他">その他</option>
+                    </select>
+                    
+                    <select id="category-select">
+                        <option value="">カテゴリを選択</option>
+                        <option value="仕事選び">仕事選び</option>
+                        <option value="対人関係">対人関係</option>
+                        <option value="特性">特性</option>
+                        <option value="生活リズム">生活リズム</option>
+                        <option value="イライラ（不満・苦情）">イライラ（不満・苦情）</option>
+                        <option value="将来への不安">将来への不安</option>
+                        <option value="精神症状">精神症状</option>
+                        <option value="身体症状">身体症状</option>
+                        <option value="その他">その他</option>
+                    </select>
+                    
+                    <textarea placeholder="相談内容を入力してください"></textarea>
+                    <textarea placeholder="対応・助言内容を入力してください"></textarea>
+                    <button type="submit">保存</button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="users" class="page">
+            <div class="section">
+                <h2>利用者一覧</h2>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>担当者</th>
+                        <th>診断名</th>
+                        <th>最終相談日</th>
+                        <th>次回フォロー</th>
+                    </tr>
+                    <tr>
+                        <td>#01</td>
+                        <td>藤田</td>
+                        <td>うつ病、ADHD</td>
+                        <td>2025/03/11</td>
+                        <td>2025/03/12</td>
+                    </tr>
+                    <tr>
+                        <td>#02</td>
+                        <td>三浦</td>
+                        <td>統合失調症</td>
+                        <td>2025/03/08</td>
+                        <td>2025/03/10</td>
+                    </tr>
+                    <tr>
+                        <td>#03</td>
+                        <td>石川</td>
+                        <td>ASD</td>
+                        <td>2025/03/10</td>
+                        <td>2025/03/12</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div id="followup" class="page">
+            <div class="section">
+                <h2>フォローアップ設定</h2>
+                <p>この画面ではフォローアップの設定を行います。（開発中）</p>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // タブ切り替え
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // タブのアクティブ状態を更新
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // ページの表示を切り替え
+                    const pageId = this.getAttribute('data-page');
+                    document.querySelectorAll('.page').forEach(page => {
+                        page.classList.remove('active');
+                    });
+                    document.getElementById(pageId).classList.add('active');
+                });
+            });
+            
+            // フォーム送信
+            const form = document.getElementById('record-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('相談記録を保存しました（デモ機能）');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
